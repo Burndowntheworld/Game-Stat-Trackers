@@ -46,7 +46,7 @@ python3 -m pip install --upgrade Pillow
 
 ## Usage
 
-Launch the [Val Stat Checker.pyw](val stat checker.pyw) python script, and enter the info required in the labeled text boxes. Once boxes are filled out correctly, you may click ENTER on your keyboard, or the "Search And View Player Stats" button on screen.
+Launch the [Val Stat Checker.pyw](val stat tracker.pyw) python script, and enter the info required in the labeled text boxes. Once boxes are filled out correctly, you may click ENTER on your keyboard, or the "Search And View Player Stats" button on screen.
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
