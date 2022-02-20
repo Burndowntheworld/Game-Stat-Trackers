@@ -3,7 +3,7 @@
 
 ## About The Project
 
-An easy, simple to use set of python scripts to pull data from various sites. data incluseds, but is not limited to
+An easy, simple to use set of python scripts to pull data from various sites. data includes, but is not limited to
 - kills
 - wins
 - kda ratios
@@ -57,3 +57,5 @@ Launch the <!-- put file link here --> python script, and enter the info require
 [***Burndowntheworld#6969***](https://discord.com/channels/@me/680456272650436675)
 ### Email
 burndowntheworld1@gmail.com
+
+<p align="right">(<a href="#top">back to top</a>)</p>
