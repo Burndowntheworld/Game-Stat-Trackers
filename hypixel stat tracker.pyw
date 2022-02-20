@@ -1,0 +1,60 @@
+from tkinter import *
+import webbrowser
+import os
+
+
+root = Tk()
+root.title("hypixel Stat Checker")
+root.resizable(False, False)
+
+navbar = Menu(root)
+root.config(menu=navbar)
+
+other_stats_menu = Menu(navbar)
+navbar.add_cascade(label="Other Stat Trackers", menu=other_stats_menu)
+other_stats_menu.add_command(label="Fortnite", command=lambda: fortnite())
+other_stats_menu.add_command(label="Valorant", command=lambda: valorant())
+other_stats_menu.add_command(label="Hypixel SB", command=lambda: hypixelsb())
+
+def fortnite():
+    os.system('C:/Python38/python.exe "c:/Users/mgibbons/Desktop/game stat checkers/fortnite stat tracker.pyw"')
+
+def valorant():
+    os.system('C:/Python38/python.exe "c:/Users/mgibbons/Desktop/game stat checkers/val stat tracker.pyw"')
+
+def hypixelsb():
+    os.system('C:/Python38/python.exe "c:/Users/mgibbons/Desktop/game stat checkers/hypixel sb stat checker.pyw"')
+
+
+def searchbtn():
+    global namebox
+    name = namebox.get(1.0, "end-1c")
+    link = f"https://plancke.io/hypixel/player/stats/{name}"
+    linkbtn = Button(root, text="View Stats", height=1,width=20,command=lambda: openStats(link))
+    linkbtn.place(y=290,x=190)
+
+
+def openStats(link):
+    webbrowser.open_new(link)
+
+
+window_height = 325
+window_width = 500
+
+screen_width = root.winfo_screenwidth()
+screen_height = root.winfo_screenheight()
+
+x_cordinate = int((screen_width/2) - (window_width/2))
+y_cordinate = int((screen_height/2) - (window_height/2))
+
+root.geometry("{}x{}+{}+{}".format(window_width, window_height, x_cordinate, y_cordinate))
+
+namebox = Text(root, height=2, width=25)
+namebox.place(y=100,x=150)
+nameboxtitle = Label(root, text="Name", font=("helvetica",10))
+nameboxtitle.place(y=70,x=225)
+
+searchforplayerbutton = Button(root, text="Search For Player Stats", height=1, width=25, bg="SystemButtonFace", command=lambda: searchbtn())
+searchforplayerbutton.place(y=250,x=175)
+
+root.mainloop()
