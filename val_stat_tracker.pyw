@@ -6,6 +6,8 @@ import requests
 from bs4 import BeautifulSoup
 from tkinter import ttk
 from PIL import Image, ImageTk
+import pyglet
+
 
 currentlocation = os.path.dirname(os.path.abspath(__file__))
 
@@ -23,6 +25,12 @@ def rgb_hack(rgb):
 
 root.config(bg=rgb_hack((41, 41, 41)))
 
+
+pyglet.font.add_file(f'{currentlocation}/supermercado.ttf')
+supermercado = pyglet.font.load('Supermercado')
+
+pyglet.font.add_file(f'{currentlocation}/nunito.ttf')
+nunito = pyglet.font.load('Nunito')
 
 
 def fortnite():
@@ -233,19 +241,19 @@ def openotherappsmenu():
 
     global fortnitel, hypixell, hypixelsbl, otherappsbackl
 
-    fortnitel = Label(menubar, text="Fortnite", bg="MediumOrchid4", fg="white")
+    fortnitel = Label(menubar, text="Fortnite", bg="MediumOrchid4", fg="white", font=('Nunito', 10))
     fortnitel.pack(side=LEFT, padx=20)
     fortnitel.bind('<Button-1>',lambda f: fortnite())
 
-    hypixell = Label(menubar, text="Hypixel", bg="MediumOrchid4", fg="white")
+    hypixell = Label(menubar, text="Hypixel", bg="MediumOrchid4", fg="white", font=('Nunito', 10))
     hypixell.pack(side=LEFT, padx=(0,20))
     hypixell.bind('<Button-1>', lambda h: hypixel())
 
-    hypixelsbl = Label(menubar, text="Hypixel SB", bg="MediumOrchid4", fg="white")
+    hypixelsbl = Label(menubar, text="Hypixel SB", bg="MediumOrchid4", fg="white", font=('Nunito', 10))
     hypixelsbl.pack(side=LEFT, padx=(0,20))
     hypixelsbl.bind('<Button-1>', lambda hsb: hypixelsb())
 
-    otherappsbackl = Label(menubar, text="Back", bg="MediumOrchid4", fg="white")
+    otherappsbackl = Label(menubar, text="Back", bg="MediumOrchid4", fg="white", font=('Nunito', 10))
     otherappsbackl.pack(side=LEFT, padx=(0,20))
     otherappsbackl.bind('<Button-1>', lambda b: otherappsmenuback())
 
@@ -267,32 +275,32 @@ def openvalorantextrasmenu():
 
     global agentsl, weaponsl, mapsl, cardsl, buddiesl, spraysl, valorantextrasbackl
 
-    agentsl = Label(menubar, text="Agents", bg="MediumOrchid4", fg="white")
-    agentsl.pack(side=LEFT, padx=18)
+    agentsl = Label(menubar, text="Agents", bg="MediumOrchid4", fg="white", font=('Nunito', 9))
+    agentsl.pack(side=LEFT, padx=(7,17))
     agentsl.bind('<Button-1>',lambda a: agents())
 
-    weaponsl = Label(menubar, text="Weapons", bg="MediumOrchid4", fg="white")
-    weaponsl.pack(side=LEFT, padx=(0,18))
+    weaponsl = Label(menubar, text="Weapons", bg="MediumOrchid4", fg="white", font=('Nunito', 9))
+    weaponsl.pack(side=LEFT, padx=(0,17))
     weaponsl.bind('<Button-1>',lambda w: weapons())
 
-    mapsl = Label(menubar, text="Maps", bg="MediumOrchid4", fg="white")
-    mapsl.pack(side=LEFT, padx=(0,18))
+    mapsl = Label(menubar, text="Maps", bg="MediumOrchid4", fg="white", font=('Nunito', 9))
+    mapsl.pack(side=LEFT, padx=(0,17))
     mapsl.bind('<Button-1>',lambda m: maps())
 
 
-    cardsl = Label(menubar, text="Cards", bg="MediumOrchid4", fg="white")
-    cardsl.pack(side=LEFT, padx=(0,18))
+    cardsl = Label(menubar, text="Cards", bg="MediumOrchid4", fg="white", font=('Nunito', 9))
+    cardsl.pack(side=LEFT, padx=(0,17))
     cardsl.bind('<Button-1>',lambda c: cards())
 
-    buddiesl = Label(menubar, text="Buddies", bg="MediumOrchid4", fg="white")
-    buddiesl.pack(side=LEFT, padx=(0,18))
+    buddiesl = Label(menubar, text="Buddies", bg="MediumOrchid4", fg="white", font=('Nunito', 9))
+    buddiesl.pack(side=LEFT, padx=(0,17))
     buddiesl.bind('<Button-1>',lambda b: buddies())
 
-    spraysl = Label(menubar, text="Sprays", bg="MediumOrchid4", fg="white")
-    spraysl.pack(side=LEFT, padx=(0,18))
+    spraysl = Label(menubar, text="Sprays", bg="MediumOrchid4", fg="white", font=('Nunito', 9))
+    spraysl.pack(side=LEFT, padx=(0,17))
     spraysl.bind('<Button-1>',lambda s: sprays())
 
-    valorantextrasbackl = Label(menubar, text="Back", bg="MediumOrchid4", fg="white")
+    valorantextrasbackl = Label(menubar, text="Back", bg="MediumOrchid4", fg="white", font=('Nunito', 9))
     valorantextrasbackl.pack(side=LEFT, padx=(0,20))
     valorantextrasbackl.bind('<Button-1>', lambda b: valorantextrasback())
 
@@ -316,11 +324,11 @@ def openothermenumenu():
 
     global creditsl, othermenubackl
 
-    creditsl = Label(menubar, text="Credits", bg="MediumOrchid4", fg="white")
+    creditsl = Label(menubar, text="Credits", bg="MediumOrchid4", fg="white", font=('Nunito', 10))
     creditsl.pack(side=LEFT, padx=20)
     creditsl.bind('<Button-1>',lambda c: showcredits())
 
-    othermenubackl = Label(menubar, text="Back", bg="MediumOrchid4", fg="white")
+    othermenubackl = Label(menubar, text="Back", bg="MediumOrchid4", fg="white", font=('Nunito', 10))
     othermenubackl.pack(side=LEFT, padx=(0,20))
     othermenubackl.bind('<Button-1>',lambda b: othermenuback())
 
@@ -335,36 +343,36 @@ def othermenuback():
 
 def defaultmenu():
     global otherapps, valorantextras, othermenu
-    otherapps = Label(menubar, text="Other Stat Trackers", bg="MediumOrchid4", fg="white")
+    otherapps = Label(menubar, text="Other Stat Trackers", bg="MediumOrchid4", fg="white", font=('Nunito', 10))
     otherapps.pack(side=LEFT, padx=20)
     otherapps.bind('<Button-1>',lambda s: openotherappsmenu())
 
-    valorantextras = Label(menubar, text="Valorant Extras", bg="MediumOrchid4", fg="white")
+    valorantextras = Label(menubar, text="Valorant Extras", bg="MediumOrchid4", fg="white", font=('Nunito', 10))
     valorantextras.pack(side=LEFT, padx=(0,20))
     valorantextras.bind('<Button-1>', lambda v: openvalorantextrasmenu())
 
-    othermenu = Label(menubar, text="Other", bg="MediumOrchid4", fg="white")
+    othermenu = Label(menubar, text="Other", bg="MediumOrchid4", fg="white", font=('Nunito', 10))
     othermenu.pack(side=LEFT, padx=(0,20))
     othermenu.bind('<Button-1>', lambda o: openothermenumenu())
 
 
-namebox = Text(root, height=2, width=25, bg=rgb_hack((100, 100, 100)), fg="white")
+namebox = Text(root, height=2, width=25, bg=rgb_hack((100, 100, 100)), fg="white", font=('Nunito', 10))
 namebox.place(y=100,x=100)
-nameboxtitle = Label(root, text="Name", font=("helvetica",10), bg=rgb_hack((41, 41, 41)), fg="white")
+nameboxtitle = Label(root, text="Name", font=("Supermercado",10), bg=rgb_hack((41, 41, 41)), fg="white")
 nameboxtitle.place(y=70,x=175)
 
 
-tagbox = Text(root, height=2, width=10, bg=rgb_hack((100, 100, 100)), fg="white")
+tagbox = Text(root, height=2, width=10, bg=rgb_hack((100, 100, 100)), fg="white", font=('Nunito', 10))
 tagbox.place(y=100,x=350)
-tagboxtitle = Label(root, text="Tag", font=("helvetica", 10), bg=rgb_hack((41, 41, 41)), fg="white")
+tagboxtitle = Label(root, text="Tag", font=("Supermercado", 10), bg=rgb_hack((41, 41, 41)), fg="white")
 tagboxtitle.place(y=70,x=375)
 
 
-hastag = Label(root, text="#", font=("helvetica", 14), fg=rgb_hack((186, 186, 186)), bg=rgb_hack((41, 41, 41)))
+hastag = Label(root, text="#", font=("Supermercado", 14), fg=rgb_hack((186, 186, 186)), bg=rgb_hack((41, 41, 41)))
 hastag.place(y=105,x=318)
 
 
-searchforplayerbutton = Button(root, text="Search And View Player Stats", height=1, width=25, bg=rgb_hack((100, 100, 100)), fg="white", command=lambda: searchandopen())
+searchforplayerbutton = Button(root, text="Search And View Player Stats", height=1, width=25, bg=rgb_hack((100, 100, 100)), fg="white", font=('Nunito', 9), command=lambda: searchandopen())
 searchforplayerbutton.place(y=200,x=175)
 
 
@@ -374,7 +382,7 @@ title_bar.pack(expand=1, fill=X, anchor="nw")
 title_bar.bind('<B1-Motion>', move)
 
 
-title_bar_title = Label(title_bar, text="Valorant Stat Tracker", bg=rgb_hack((80,80,80)),bd=0,fg='white',font=("helvetica", 10),highlightthickness=0)
+title_bar_title = Label(title_bar, text="valorant stat tracker", bg=rgb_hack((80,80,80)),bd=0,fg='white',font=("Supermercado", 11),highlightthickness=0)
 title_bar_title.pack(side=LEFT, pady=6, padx=(10,0))
 
 
@@ -385,19 +393,19 @@ close_button.pack(side=RIGHT)
 menubar = Frame(root, bg="Orchid4", borderwidth=2, relief="ridge", highlightcolor="purple2")
 menubar.pack(expand=1, fill=X, anchor="s")
 
-menubartitle = Label(menubar, text="    MENU    ", bg="Orchid4", fg="white")
+menubartitle = Label(menubar, text="    menu    ", bg="Orchid4", fg="white", font=('Supermercado',12))
 menubartitle.pack(side=LEFT, pady=(15,15))
 
 
-otherapps = Label(menubar, text="Other Stat Trackers", bg="MediumOrchid4", fg="white")
+otherapps = Label(menubar, text="Other Stat Trackers", bg="MediumOrchid4", fg="white", font=('Nunito', 10))
 otherapps.pack(side=LEFT, padx=20)
 otherapps.bind('<Button-1>',lambda s: openotherappsmenu())
 
-valorantextras = Label(menubar, text="Valorant Extras", bg="MediumOrchid4", fg="white")
+valorantextras = Label(menubar, text="Valorant Extras", bg="MediumOrchid4", fg="white", font=('Nunito', 10))
 valorantextras.pack(side=LEFT, padx=(0,20))
 valorantextras.bind('<Button-1>', lambda v: openvalorantextrasmenu())
 
-othermenu = Label(menubar, text="Other", bg="MediumOrchid4", fg="white")
+othermenu = Label(menubar, text="Other", bg="MediumOrchid4", fg="white", font=('Nunito', 10))
 othermenu.pack(side=LEFT, padx=(0,20))
 othermenu.bind('<Button-1>', lambda o: openothermenumenu())
 
