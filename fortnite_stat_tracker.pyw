@@ -10,9 +10,8 @@ from PIL import Image, ImageTk
 currentlocation = os.path.dirname(os.path.abspath(__file__))
 
 root = Tk()
-root.title("Valorant Stat Checker")
+root.title("Fortnite Stat Checker")
 root.resizable(False, False)
-root.iconphoto(False, PhotoImage(file=f'{currentlocation}/valorant.png'))
 root.overrideredirect(True)
 root.geometry("500x325")
 root.attributes("-topmost",1)
