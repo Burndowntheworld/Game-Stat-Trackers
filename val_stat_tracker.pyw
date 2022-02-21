@@ -85,7 +85,6 @@ def showcredits():
 
     creditwindow.geometry("{}x{}+{}+{}".format(window_width, window_height, x_cordinate, y_cordinate))
 
-    mitchell = Label(creditwindow, text="Made By Mitchell Gibbons AKA", fg="white", bg="black")
     burndowntheworld = Label(creditwindow, text="Burndowntheworld", fg="white", bg="black")
     discord = Label(creditwindow, text="burndowntheworld#6969", fg="white", bg="black")
     email = Label(creditwindow, text="burndowntheworld1@gmail.com", fg="white", bg="black")
@@ -96,8 +95,7 @@ def showcredits():
     notpartneredwithtrackergg = Label(creditwindow, text="We are not affiliated, or partnered with 'Tracker Network'. We do not work for/with 'Tracker Network'.", font=("helvetica",7), fg="white", bg="black")
     
 
-    mitchell.pack(pady=(100,0))
-    burndowntheworld.pack()
+    burndowntheworld.pack(pady=(100,0))
     discord.pack()
     email.pack()
 
@@ -220,11 +218,8 @@ def duosplit(string):
     return grouped_words
 
 
-
-
 def nothing():
     pass
-
 
 
 def move(e):
