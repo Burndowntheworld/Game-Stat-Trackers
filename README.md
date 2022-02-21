@@ -38,10 +38,6 @@ pip install beautifulsoup4
 python3 -m pip install --upgrade Pillow
 ```
 
-###### Contact Me On Discord For Files
-
-[***Burndowntheworld#6969***](https://discord.com/channels/@me/680456272650436675)
-
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Usage
